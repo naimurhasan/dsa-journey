@@ -12,16 +12,16 @@ int prime[mx+1];
 // jodi 1 hoy not a prime
 
 void sieve(){
-    for(int i = 2; i*i<mx; i++){
+    for(int i = 2; i<=mx; i++){
         if(prime[i]==0){
-            for(int j =2; i*j<=mx; j++){
-              prime[i*j] = 1;  
+            for(int j = 2; j*i<=mx; j++){
+                prime[i*j] = 1;
             }
         }
     }
-    cout << 2 << " ";
-    for(int i = 3; i<=mx; i+=2){
-        cout << i << " ";
+    for(int i=2; i<mx; i++){
+        if(prime[i]==0)
+            cout << i << " ";
     }
 }
 
