@@ -1,0 +1,14 @@
+merge_sort:[]
+
+tree:
+  post_order: []
+  in_order: []
+
+bfs: []
+dfs: []
+
+Euclidian_distance: []
+
+IUPC_SOLVE:
+  - https://toph.co/c/sust-inter-university-2023
+  - https://bangladesh-cp-server.notion.site/SUST-IUPC-2023-Editorial-b2a5588396a642a6a1fd4658ac6b71e0
