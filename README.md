@@ -32,7 +32,7 @@
 -- --
 0000101 => 5
 
-## Updated tree or SRC
+## Updated tree of src/
     001_hello.cpp
     002_io.cpp
     003_prime.cpp
