@@ -28,9 +28,78 @@
 5&7 => 5
 
 0000101 <br/>
-0000111
--- --
-0000101 => 5
+0000111 <br/>
+\--<br/>
+0000101 <br/>
+=> 5
+
+`cout << (80<<1); // output 160` <br/>
+`cout << (80<<1); // output 40`
+
+#### determine odd even
+```cpp
+if(11&1)
+        cout << "odd";
+    else
+        cout << "even";
+// output :odd
+
+
+#### determine ith bit
+```cpp
+bool getIthBit(int n, int i){
+    int mask = (1<<(i-1));
+    return (n&mask) > 0 ? 1 : 0;
+}
+void setIthBit(int &n, int i){
+    int mask = (1<<(i-1));
+    n = (n|mask);
+}
+
+void clearBit(int &n, int i){
+    int mask = ~(1<<(i-1));
+    n = (n&mask);
+}
+
+int main(){
+    int n = 5;
+    int pos = 2;
+    cout << getIthBit(n, pos) << endl;
+    setIthBit(n, pos);
+    cout << n << endl;
+    cout << getIthBit(n, pos) << endl;
+    clearBit(n, 3);
+    cout << n << endl;
+    return 0;
+}
+/*
+0
+7
+1
+3
+*/
+```
+### clear bits in range
+if n = 31
+i 1
+j 3
+result is 17
+
+we frist make  <br>
+a as 11111000000<br>
+b as 00000000011
+then a|b
+
+```cpp
+void clearBitsInRange(int &n, int i, int j){
+  int a = (~0)<<j+1;
+  int b = (1<<i)-1;
+  int mask  = a|b;
+  n = n&mask;
+}
+```
+
+
 
 ## Updated tree of src/
     001_hello.cpp
