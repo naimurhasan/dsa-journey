@@ -98,9 +98,42 @@ void clearBitsInRange(int &n, int i, int j){
   n = n&mask;
 }
 ```
+### is power of two
 
+```cpp
+int isPowerOfTwo(int n){
+  return ((n & (n-1)) == 0);
+}
 
+int main(){
+  cout << isPowerOfTwo(15);
+  return 0;
+}
+// output 0
+```
 
+```cpp
+int countBits(int n){
+  int cnt = 0;
+  while(n>0){
+    if((n&1)!=0)
+      cnt++;
+    n>>=1;
+  }
+  return cnt;
+}
+
+int countBits(int n){
+  // faster // iterate over only up to 1s
+  int ans = 0;
+  while(n>0){
+    n = (n& (n-1));
+    ans++;
+  }
+  return ans;
+}
+```
+ 
 ## Updated tree of src/
     001_hello.cpp
     002_io.cpp

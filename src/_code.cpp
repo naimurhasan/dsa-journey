@@ -5,21 +5,19 @@ typedef vector<int> VI;
 typedef vector<VI> VVI;
 #define ll long long
 typedef unsigned long long int  uint64;
+#define MAX 1000000
 
-void clearBitsInRange(int &n, int i, int j){
-  int a = (~0)<<j+1;
-  int b = (1<<i)-1;
-  int mask  = a|b;
-  n = n&mask;
+int countBits(int n){
+  // faster // iterate over only up to 1s
+  int ans = 0;
+  while(n>0){
+    n = (n& (n-1));
+    ans++;
+  }
+  return ans;
 }
 
 int main(){
-    int n = 31;
-    int i = 1;
-    int j = 3;
-    clearBitsInRange(n, i, j);
-    cout << n;
-
-
-    return 0;
+  cout << countBits(15);
+  return 0;
 }
